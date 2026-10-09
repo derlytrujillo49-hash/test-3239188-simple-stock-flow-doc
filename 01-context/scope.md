@@ -62,3 +62,42 @@ What the system **does NOT build** in this version and why:
 | 2 | All time logs utilize native UTC serialization (§3). | Regional offset converters and timezone mapping wrappers would change application logic (§12). |
 | 3 | Initial catalog volume remains static at 5 seeded categories. | Category lookups and relational data mapping strategies might change (§9.1). |
 
+
+---
+
+## Constraints
+
+| Type | Description |
+|------|-------------|
+| **Time** | Strict academic/technical SDD evaluation deadline cycle (§12). |
+| **Technology** | Must execute on PostgreSQL 16.14 and C# .NET architecture (§12). |
+| **Engine Rules** | No raw defaults inside database columns; values are set purely by domain layers (§3). |
+| **Regulatory** | Passwords must use an irreversible cryptographic hash port without plaintext reads (D-09 / §2.5). |
+
+---
+
+## External dependencies
+
+| Dependency | Team / Provider | Required date | Status |
+|-----------|----------------|--------------|--------|
+| **Blob Image Asset Host** | External Cloud Provider | Baseline | 🟢 Available |
+| **PostgreSQL 16.14 Hub** | Infrastructure Stack | Baseline | 🟢 Verified via §10 |
+
+---
+
+## How to update the scope
+
+The scope can change, but the change has a process:
+
+1. Document the proposed change in this file
+2. Evaluate the impact on schedule and database schema integrity (§10)
+3. Obtain approval from the Product Owner and Tech Lead
+4. Update the roadmap and backlog records
+
+---
+
+## Correlations
+
+- System Overview → `01-context/README.md`
+- Core Data Model → `spec/data-model.md`
+- Project Glossary → `02-domain/README.md`
