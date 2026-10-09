@@ -34,3 +34,21 @@
 - [ ] Service `README.md` updated if the public interface changed.
 - [ ] If a significant technical decision was made (e.g., changes to physical indexing or soft-delete policies): ADR created or updated inside `05-architecture/decisions/records/` (§0 / §2.2 / §6.2).
 
+
+---
+
+## Allowed exceptions
+
+The following exceptions must be explicitly agreed to by the Tech Lead:
+- E2E tests omitted due to staging environment limitations (document the risk and ensure manual validation via psql query testing §10).
+- Documentation deferred for urgent delivery (create a tech-debt ticket matching the format of the declared debt log §13).
+
+---
+
+## What is NOT a Done criterion
+
+- "The code is on my machine" — It must be fully pushed to the GitHub repository branch.
+- "It works on my local environment" — It must execute and pass in the UTC-configured staging database server (§3 / §12).
+- "The PM/PO approved it" — That is the product Definition of Done, not the engineering team's validation criterion for the data model integrity.
+
+
