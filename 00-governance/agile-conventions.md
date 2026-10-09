@@ -72,3 +72,38 @@
 
   3. Is anything blocking me with the tracking or constraints? (§4)
 - **Rule:** Technical discussions happen after the daily, not during it.
+
+
+## Backlog tool
+
+**Tool:** GitHub Projects
+**Board URL:** https://github.com
+
+### Board columns
+
+| Column | Meaning |
+|--------|---------|
+| Backlog | Pending refinement or untraced user stories |
+| Ready | Ready to enter the sprint (meets DoR and matches data-model schema §12) |
+| In Progress | Someone is actively working on technical documentation or reverse engineering |
+| In Review | In Pull Request / Code review against database literal constraints (§10) |
+| Done | Meets DoD, fully traced with zero silent assumptions, and closed |
+
+---
+
+## Team velocity
+
+| Sprint | Story points completed | Notes |
+|--------|----------------------|-------|
+| Sprint 1 | 15 | Mapping context, domain, requirements, and architecture from data-model |
+| Sprint 2 | — | Planned execution for pending engine tasks (T-09, T-11, T-20) |
+| Average | 15 | Baseline established for technical design |
+
+---
+
+## Related documents
+
+- Definition of Ready → `00-governance/definition-of-ready.md`
+- Definition of Done → `00-governance/definition-of-done.md`
+- Data Model Specification → `spec/data-model.md`
+
