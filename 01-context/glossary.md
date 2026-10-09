@@ -24,3 +24,25 @@
 | **Stock** | Unidades disponibles de un producto en el catálogo. Nunca puede ser negativo (§1 / §2.2). | Restricción impuesta por el motor mediante `ck_product_stock_non_negative` (§4). |
 | **Imagen del producto** | Clave opaca del archivo binario almacenado de manera externa; su ausencia es `NULL` (§1 / D-08). | Evitar almacenar rutas relativas o bytes en crudo (§1). |
 
+
+| **Venta** | Hecho comercial consumado e inmutable que registra quién, cuándo y qué se vendió. Una vez registrada no se edita ni se borra (§1 / §2.3). | No confundir con cotizaciones o estados intermedios. |
+| **Línea de venta** | Renglón de la venta que guarda una copia congelada del producto, cantidad y precio del momento de la transacción (§1 / §2.4). | Objeto interno; no tiene vida independiente fuera de su venta (§2.4 / FK-2). |
+| **Cantidad** | Unidades vendidas en una línea de venta. Debe ser estrictamente positiva (§1). | Encapsulado en el objeto de valor `Quantity` (§2.4). |
+| **Usuario** | Operador interno que se autentica en la plataforma y registra las transacciones comerciales (§1 / §2.5). | No existe entidad cliente ni comprador final (§1). |
+| **Rol** | Atribución del usuario restringida a un conjunto cerrado de dos opciones: `admin` o `seller` (§1 / §2.5). | El rol `admin` es provisionado por el entorno de despliegue y no en ejecución (§11.1). |
+
+---
+
+## Technical terms of the project
+
+| Term | Definition |
+|------|-----------|
+| **Arquitectura Hexagonal** | Estilo arquitectónico (Puertos y Adaptadores) que aísla las reglas puras del dominio de los detalles de infraestructura y base de datos (§2.5 / §12). |
+| **Raíz de Agregado** | Entidad principal del dominio que define los límites de consistencia y controla el acceso a sus componentes internos (§2.2 / §2.3). |
+| **Nombre Congelado** | Copia literal de los atributos del producto en el instante de la venta para proteger el reporte histórico ante cambios del catálogo (§1 / ADR-004). |
+| **Baja Lógica** | Mecanismo que marca un producto como inactivo mediante la columna `deleted_at` sin eliminar la fila física, preservando la integridad del histórico (§2.2 / ADR-003). |
+| **Concurrencia Optimista** | Patrón para controlar modificaciones simultáneas en el motor de base de datos utilizando la columna de sistema `xmin` como testigo (§3 / D-04 / T-10). |
+| **Propiedad Sombra** | Campo definido puramente en el mapeo de persistencia que no se expone en las entidades del dominio de la aplicación (ej. `deleted_at`, `xmin` — §2.2 / §3). |
+| **Datos Semilla** | Información estática requerida para la operación inicial del sistema cargada directamente en la migración de la base de datos (§2.1 / §9.1). |
+| **Valor Monomoneda** | Restricción del sistema que asume una única moneda operativa por construcción en todas las tablas y objetos financieros (§1 / D-05). |
+
