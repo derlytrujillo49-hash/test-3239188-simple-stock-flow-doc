@@ -46,3 +46,25 @@
 | **Datos Semilla** | Información estática requerida para la operación inicial del sistema cargada directamente en la migración de la base de datos (§2.1 / §9.1). |
 | **Valor Monomoneda** | Restricción del sistema que asume una única moneda operativa por construcción en todas las tablas y objetos financieros (§1 / D-05). |
 
+
+---
+
+## Acronyms
+
+| Acronym | Meaning |
+|---------|---------|
+| **API** | Application Programming Interface (Interfaz de Programación de Aplicaciones) |
+| **CRUD** | Create, Read, Update, Delete (Crear, Leer, Actualizar, Borrar) |
+| **SDD** | Software Design Description (Descripción de Diseño de Software — §12) |
+| **ADR** | Architecture Decision Record (Registro de Decisión de Arquitectura — §12) |
+| **PR** | Pull Request (Solicitud de Extracción de Código) |
+| **DoD** | Definition of Done (Definición de Terminado) |
+| **DoR** | Definition of Ready (Definición de Listo) |
+| **FK** | Foreign Key (Clave Foránea — §5) |
+| **PK** | Primary Key (Clave Primaria — §4) |
+| **UTC** | Coordinated Universal Time (Huso Horario Estándar del Servidor — §3 / §12) |
+| **ORM** | Object-Relational Mapping (Mapeador de Objetos Relacionales — §0) |
+| **UUID** | Universally Unique Identifier (Identificador Único Universal — §3) |
+| **D-xx** | Decisión Técnica Específica del Proyecto (ej. D-05 — §1) |
+| **T-xx** | Tarea Técnica Programada en el Backlog de Trabajo (ej. T-20 — §4) |
+
