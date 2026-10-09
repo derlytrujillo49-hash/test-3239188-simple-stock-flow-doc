@@ -32,3 +32,19 @@ Simple Stock Flow is a lightweight, immutable transaction system designed for in
 | Database | PostgreSQL 16.14 | Central relational engine hosting the physical schema where data constraints are strictly validated (§3 / §10). |
 | ORM / Adapter | Entity Framework Core | Persistence adapter that maps application plural sets to singular relational tables (§0). |
 | Infrastructure | Docker Compose | Containers hosting the database server under the `simple-stock-flow-db-1` node configured strictly in UTC (§3 / §12). |
+
+
+## Current status
+
+- **Phase:** In development (Physical schema successfully mapped and verified against the PostgreSQL engine — §10).
+- **Current version:** v1.0.0-SDD
+- **Last release:** 2026-09-19 (§12)
+- **Next milestone:** Implementation of pending structural engine tasks, such as accounting foreign keys and category mappings (T-11 / T-12 — §4 / §5).
+
+## Project contacts
+
+| Role | Name | Contact |
+|------|------|---------|
+| Tech Lead | SDD Software Architect | techlead@simplestockflow.local |
+| Product Owner | System Owner | owner@simplestockflow.local |
+| DevOps | Database Administrator | dba@simplestockflow.local (§10) |
